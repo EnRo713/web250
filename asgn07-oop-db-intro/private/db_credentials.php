@@ -10,7 +10,7 @@ if ($_SERVER['SERVER_NAME'] == 'localhost') {
   define("DB_USER", "webuser");
   define("DB_PASS", "secretpassword");
   define("DB_NAME", "chain_gang");
-} elseif ($_SERVER['SERVER_NAME'] == 'web182.noidofbuenavista.click') {
+} elseif ($_SERVER['SERVER_NAME'] == 'web250.noidofbuenavista.click') {
   define("DB_SERVER", "localhost");
   define("DB_USER", "um87bmeeqisao");
   define("DB_PASS", ")<d1]3l#f>*1");
