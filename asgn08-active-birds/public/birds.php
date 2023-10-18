@@ -19,13 +19,10 @@
         <th>Backyard Tips</th>
       </tr>
 
-<?php
+  <?php
+    $birds = Bird::find_all();
 
-  $parser = new ParseCSV(PRIVATE_PATH . '/wnc-birds.csv');
-  $bird_array = $parser->parse();
-
-  foreach($bird_array as $args) { 
-  $bird = new Bird($args);
+    foreach($birds as $bird) { 
   ?>
       <tr>
         <td><?php echo h($bird->common_name); ?></td>
