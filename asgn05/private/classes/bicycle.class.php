@@ -63,4 +63,8 @@ class Bicycle {
       return "Unknown";
     }
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> dev

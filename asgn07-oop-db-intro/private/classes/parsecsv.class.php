@@ -2,14 +2,7 @@
 
 class ParseCSV {
 
-<<<<<<< HEAD
-=======
-  /* 
-   Add a public static property named $delimiter.
-   Hint: check the delimiter in the wnc-birds.csv file.
-  */
->>>>>>> dev
-  public static $delimiter = '|';
+  public static $delimiter = ',';
 
   private $filename;
   private $header;
@@ -40,10 +33,7 @@ class ParseCSV {
       return false;
     }
 
-<<<<<<< HEAD
-=======
     // clear any previous results
->>>>>>> dev
     $this->reset();
 
     $file = fopen($this->filename, 'r');
