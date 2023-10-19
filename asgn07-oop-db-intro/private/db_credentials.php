@@ -12,9 +12,9 @@ if ($_SERVER['SERVER_NAME'] == 'localhost') {
   define("DB_NAME", "chain_gang");
 } elseif ($_SERVER['SERVER_NAME'] == 'web250.noidofbuenavista.click') {
   define("DB_SERVER", "localhost");
-  define("DB_USER", "um87bmeeqisao");
-  define("DB_PASS", ")<d1]3l#f>*1");
-  define("DB_NAME", "dbxqg5etyborxp");
+  define("DB_USER", "uy1xi26fgd3by");
+  define("DB_PASS", "i(-5iS=0dKs=ODL+");
+  define("DB_NAME", "dbwc34ugbdmnho");
 }
 
 ?>
