@@ -45,6 +45,8 @@ function is_get_request() {
 
 // PHP on Windows does not have a money_format() function.
 // This is a super-simple replacement.
+error_reporting(error_reporting() & ~E_DEPRECATED);
+
 if(!function_exists('money_format')) {
   function money_format($format, $number) {
     return '$' . number_format($number, 2);
