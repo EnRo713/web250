@@ -7,7 +7,9 @@
 <h2>Bird inventory</h2>
 <p>This is a short list -- start your birding!</p>
 
-// Create a link to Add a Bird
+<a href="<?php // Create a link to Add a Bird
+echo url_for('new.php');
+?>">Add Bird</a>
 
     <table border="1">
       <tr>
@@ -22,8 +24,7 @@
 <?php
 
 // Create a new bird object that uses the find_all() method
-
-
+  $birds = Bird::find_all();
 
   foreach($birds as $bird) { 
 
