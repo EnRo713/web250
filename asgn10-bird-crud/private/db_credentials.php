@@ -5,17 +5,16 @@
 // 2. Unique credentials on development and production servers
 // 3. Unique credentials if working with multiple developers
 
-// localhost
-define("DB_SERVER", "localhost");
-define("DB_USER", "sabirdsUser");
-define("DB_PASS", "cassowary");
-define("DB_NAME", "sabirds");
-
-// a2hosting
-// define("DB_SERVER", "localhost");
-// define("DB_USER", " charli12_chain_gang");
-// define("DB_PASS", 'RF2"JfXC9^e5t.2');
-// define("DB_NAME", "charli12_chain_gang");
-
+if ($_SERVER['SERVER_NAME'] == 'localhost') {
+  define("DB_SERVER", "localhost");
+  define("DB_USER", "sabirdsUser");
+  define("DB_PASS", "cassowary");
+  define("DB_NAME", "sabirds");
+} elseif ($_SERVER['SERVER_NAME'] == 'web250.noidofbuenavista.click') {
+  define("DB_SERVER", "localhost");
+  define("DB_USER", "uy1xi26fgd3by");
+  define("DB_PASS", "i(-5iS=0dKs=ODL+");
+  define("DB_NAME", "dbhjs31o0l0cmf");
+}
 
 ?>
