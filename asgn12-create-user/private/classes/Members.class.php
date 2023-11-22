@@ -2,14 +2,15 @@
 
 class Member extends DatabaseObject {
 
-  static protected $table_name = "members";
-  static protected $db_columns = ['id', 'first_name', 'last_name', 'email', 'username', 'hashed_password'];
+  static protected $table_name = "users";
+  static protected $db_columns = ['id', 'first_name', 'last_name', 'email', 'username', 'user_level', 'hashed_password'];
 
   public $id;
   public $first_name;
   public $last_name;
   public $email;
   public $username;
+  public $user_level;
   protected $hashed_password;
   public $password;
   public $confirm_password;
