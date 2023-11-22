@@ -1,6 +1,6 @@
 <?php
 
-require_once('../private/initialize.php');
+require_once('../../private/initialize.php');
 
 require_login();
 
@@ -27,7 +27,7 @@ if(is_post_request()) {
 ?>
 
 <?php $page_title = 'Create Member'; ?>
-<?php include(SHARED_PATH . '/staff_header.php'); ?>
+<?php include(SHARED_PATH . '/member_header.php'); ?>
 
 <div id="content">
 
@@ -38,12 +38,13 @@ if(is_post_request()) {
 
     <?php echo display_errors($member->errors); ?>
 
-    <form action="<?php echo url_for('/members/new.php'); ?>" method="post">
+    <form action="<?php echo url_for('/members/new.php'); ?>" method="post" id="demo-form">
 
       <?php include('form_fields.php'); ?>
 
       <div id="operations">
         <input type="submit" value="Create Member" />
+
       </div>
     </form>
 
@@ -51,4 +52,10 @@ if(is_post_request()) {
 
 </div>
 
-<?php include(SHARED_PATH . '/staff_footer.php'); ?>
+<script>
+  function onSubmit(token) {
+    document.getElementById("demo-form").submit();
+  }
+</script>
+
+<?php include(SHARED_PATH . '/member_footer.php'); ?>

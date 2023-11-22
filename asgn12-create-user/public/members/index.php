@@ -1,5 +1,5 @@
 <?php require_once('../../private/initialize.php'); ?>
-<?php // require_login(); ?>
+<?php require_login(); ?>
 
 <?php
 
@@ -8,7 +8,7 @@ $members = Member::find_all();
 
 ?>
 <?php $page_title = 'Members'; ?>
-<?php include(SHARED_PATH . '/public_header.php'); ?>
+<?php include(SHARED_PATH . '/member_header.php'); ?>
 
 <div id="content">
   <div class="members listing">
@@ -49,4 +49,4 @@ $members = Member::find_all();
 
 </div>
 
-<?php include(SHARED_PATH . '/public_footer.php'); ?>
+<?php include(SHARED_PATH . '/member_footer.php'); ?>

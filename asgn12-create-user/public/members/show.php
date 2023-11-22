@@ -1,16 +1,16 @@
-<?php require_once('../private/initialize.php'); ?>
+<?php require_once('../../private/initialize.php'); ?>
 <?php require_login(); ?>
 
 <?php
 
-$id = $_GET['id'] ?? '1'; // PHP > 7.0
+$id = $_GET['id'] ?? '2'; // PHP > 7.0
 
 $member = Member::find_by_id($id);
 
 ?>
 
 <?php $page_title = 'Show Member: ' . h($member->full_name()); ?>
-<?php include(SHARED_PATH . '/public_header.php'); ?>
+<?php include(SHARED_PATH . '/member_header.php'); ?>
 
 <div id="content">
 
@@ -43,4 +43,4 @@ $member = Member::find_by_id($id);
 
 </div>
 
-<?php include(SHARED_PATH . '/public_footer.php'); ?>
+<?php include(SHARED_PATH . '/member_footer.php'); ?>

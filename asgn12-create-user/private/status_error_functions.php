@@ -2,8 +2,8 @@
 
 function require_login() {
   global $session;
-  if(!$session->is_logged_in()) {
-    redirect_to(url_for('/staff/login.php'));
+  if (!isset($session) || !$session->is_logged_in()) {
+    redirect_to(url_for('/login.php'));
   } else {
     // Do nothing, let the rest of the page proceed
   }

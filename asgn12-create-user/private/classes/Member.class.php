@@ -109,14 +109,20 @@ class Member extends DatabaseObject {
     return $this->errors;
   }
 
-  static public function find_by_username($username) {
+  static public function find_by_username($username, $id = null) {
     $sql = "SELECT * FROM " . static::$table_name . " ";
-    $sql .= "WHERE username='" . self::$database->escape_string($username) . "'";
+    $sql .= "WHERE username='" . self::$database->escape_string($username) . "' ";
+    
+    // Exclude null IDs only if not a new user
+    if (!is_null($id)) {
+        $sql .= "AND id IS NOT NULL";
+    }
+
     $obj_array = static::find_by_sql($sql);
-    if(!empty($obj_array)) {
-      return array_shift($obj_array);
+    if (!empty($obj_array)) {
+        return array_shift($obj_array);
     } else {
-      return false;
+        return false;
     }
   }
 

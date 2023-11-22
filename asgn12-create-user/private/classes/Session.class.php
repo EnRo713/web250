@@ -1,6 +1,6 @@
 <?php
 
-class Session {
+class Session extends Member {
 
   private $member_id;
   public $username;

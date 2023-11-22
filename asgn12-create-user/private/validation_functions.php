@@ -94,12 +94,19 @@
   }
 
   // has_unique_username('johnqpublic')
-  // * Validates uniqueness of admins.username
+  // * Validates uniqueness of members.username
   // * For new records, provide only the username.
   // * For existing records, provide current ID as second argument
   //   has_unique_username('johnqpublic', 4)
   function has_unique_username($username, $current_id="0") {
-    // Need to re-write for OOP
+    $member = Member::find_by_username($username);
+    if($member === false || $member->id == $current_id) {
+      // is unique
+      return true;
+    } else {
+      // not unique
+      return false;
+    }
   }
 
 ?>

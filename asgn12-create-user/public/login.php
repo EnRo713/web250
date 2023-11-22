@@ -20,7 +20,7 @@ if(is_post_request()) {
 
   // if there were no errors, try to login
   if(empty($errors)) {
-    $member = Member::find_by_username($username);
+    $member = Member::find_by_username($username, $session->id ?? null);
     // test if member found and password is correct
     if($member != false && $member->verify_password($password)) {
       // Mark member as logged in
