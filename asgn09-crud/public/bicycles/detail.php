@@ -1,4 +1,4 @@
-<?php require_once('../private/initialize.php'); ?>
+<?php require_once('../../private/initialize.php'); ?>
 
 <?php
 
@@ -23,9 +23,13 @@
 
   <a href="bicycles.php">Back to Inventory</a>
 
+  <h1>Bicycle: <?php echo h($bike->name()); ?></h1>
+
   <div id="page">
 
     <div class="detail">
+    <dl>
+
       <dl>
         <dt>Brand</dt>
         <dd><?php echo h($bike->brand); ?></dd>

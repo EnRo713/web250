@@ -3,6 +3,8 @@
 WEB-250
 ID: 6LeGgBYpAAAAAAbaliB8aYuIk-NUS7m7ihmgTzen
 
+https://console.cloud.google.com/security/recaptcha?authuser=0&project=my-project-28400-1700628647110
+
 1. Add monitoring and generate tokens (Frontend)
 
 On an HTML button

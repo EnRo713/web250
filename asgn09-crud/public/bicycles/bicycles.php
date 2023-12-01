@@ -1,7 +1,7 @@
-<?php require_once('../private/initialize.php'); ?>
+<?php require_once('../../private/initialize.php'); ?>
 
 <?php $page_title = 'Inventory'; ?>
-<?php include(SHARED_PATH . '/public_header.php'); ?>
+<?php include(SHARED_PATH . '../public_header.php'); ?>
 
 <div id="main">
 
@@ -13,6 +13,9 @@
       <p>We will deliver it to your door and let you try it before you buy it.</p>
     </div>
 
+    <div class="actions">
+      <a class="action" href="<?php echo url_for('/bicycles/new.php'); ?>">Add Bicycle</a>
+
     <table id="inventory">
       <tr>
         <th>Brand</th>
@@ -22,6 +25,8 @@
         <th>Gender</th>
         <th>Color</th>
         <th>Price</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
         <th>&nbsp;</th>
       </tr>
 
@@ -40,6 +45,8 @@ $bikes = Bicycle::find_all();
         <td><?php echo h($bike->color); ?></td>
         <td><?php echo h(money_format('$%i', $bike->price)); ?></td>
         <td><a href="detail.php?id=<?php echo $bike->id; ?>">View</a></td>
+        <td><a href="edit.php?id=<?php echo $bike->id; ?>">Edit</a></td>
+        <td><a href="delete.php?id=<?php echo $bike->id; ?>">Delete</a></td>
       </tr>
       <?php } ?>
 
