@@ -4,6 +4,7 @@
 
 
   <ul>
+    <li><a href="<?php echo url_for('/members/new.php'); ?>">Sign Up</a></li>
     <li><a href="<?php echo url_for('/members/index.php'); ?>">Login</a></li>
     <li><a href="<?php echo url_for('/birds.php'); ?>">View Our Inventory</a></li>
     <li><a href="<?php echo url_for('/about.php'); ?>">About Us</a></li>
