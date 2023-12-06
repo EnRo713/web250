@@ -2,7 +2,7 @@
 // prevents this code from being loaded directly in the browser
 // or without first setting the necessary object
 if(!isset($member)) {
-  redirect_to(url_for('/members/index.php'));
+  redirect_to('index.php');
 }
 ?>
 
@@ -24,6 +24,16 @@ if(!isset($member)) {
 <dl>
   <dt>Username</dt>
   <dd><input type="text" name="member[username]" value="<?php echo h($member->username); ?>" /></dd>
+</dl>
+
+<dl>
+  <dt>User Level</dt>
+  <dd>
+    <select name="member[user_level]">
+      <option value="M" <?php echo ($member->user_level == 'M') ? 'selected' : ''; ?>>Member</option>
+      <option value="A" <?php echo ($member->user_level == 'A') ? 'selected' : ''; ?>>Admin</option>
+    </select>
+  </dd>
 </dl>
 
 <dl>

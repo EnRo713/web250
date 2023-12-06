@@ -22,15 +22,29 @@ if(is_post_request()) {
   if(empty($errors)) {
     $member = Member::find_by_username($username, $session->id ?? null);
     // test if member found and password is correct
-    if($member != false && $member->verify_password($password)) {
+    if ($member != false && $member->verify_password($password)) {
       // Mark member as logged in
       $session->login($member);
-      redirect_to(url_for('/members/index.php'));
-    } else {
-      // username not found or password does not match
-      $errors[] = "Log in was unsuccessful.";
-    }
 
+      // Check user level and redirect accordingly
+      if (isset($member->user_level)) {
+          if ($member->user_level === 'M') {
+              // Redirect for members
+              redirect_to(url_for('/members/members.php'));
+          } elseif ($member->user_level === 'A') {
+              // Redirect for admins
+              redirect_to(url_for('/admin/index.php'));
+          } else {
+              // Handle other user levels or show an error
+              $errors[] = "Invalid user level";
+          }
+      } else {
+          // Handle the case where user level is not set
+          $errors[] = "User level not set";
+      }
+    } else {
+        $errors[] = "Log in was unsuccessful.";
+    }
   }
 
 }

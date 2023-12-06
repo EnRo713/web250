@@ -11,7 +11,7 @@
 
     <header>
       <h1>
-        <a href="<?php echo url_for('../public/index.php'); ?>">WNC Birds</a> Members' Area
+        <a href="<?php echo url_for('../public/index.php'); ?>">WNC Birds</a> Admin Area
       </h1>
     </header>
 
@@ -19,7 +19,7 @@
       <ul>
         <?php if($session->is_logged_in()) { ?>
         <li>User: <?php echo $session->username; ?></li>
-        <li><a href="<?php echo url_for('/members/members.php'); ?>">Menu</a></li>
+        <li><a href="<?php echo url_for('/admin/index.php'); ?>">Menu</a></li>
         <li><a href="<?php echo url_for('/logout.php'); ?>">Logout</a></li>
         <?php } ?>
       </ul>

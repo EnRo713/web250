@@ -1,46 +1,53 @@
-<?php require_once('../../private/initialize.php'); ?>
-<?php require_login(); ?>
-
 <?php
 
-$id = $_GET['id'] ?? '2'; // PHP > 7.0
+require_once('../../private/initialize.php');
+require_login();
 
-$member = Member::find_by_id($id);
+$id = $_GET['id'] ?? '1'; // PHP > 7.0
+
+$bird = Bird::find_by_id($id);
+
+/*
+  Use the bicycles/staff/edit.php file as a guide 
+  so your file mimics the same functionality.
+*/
 
 ?>
 
-<?php $page_title = 'Show Member: ' . h($member->full_name()); ?>
+<?php $page_title = 'Show Bird: ' . h($bird->common_name); ?>
 <?php include(SHARED_PATH . '/member_header.php'); ?>
 
 <div id="content">
 
-  <a class="back-link" href="<?php echo url_for('/members/index.php'); ?>">&laquo; Back to List</a>
+  <a class="back-link" href="<?php echo url_for('members/members.php'); ?>">&laquo; Back to List</a>
 
-  <div class="member show">
+  <div class="bird show">
 
-    <h1>Member: <?php echo h($member->full_name()); ?></h1>
+    <h1>Bird: <?php echo h($bird->common_name); ?></h1>
 
     <div class="attributes">
       <dl>
-        <dt>First name</dt>
-        <dd><?php echo h($member->first_name); ?></dd>
+        <dt>Common Name</dt>
+        <dd><?php echo h($bird->common_name); ?></dd>
       </dl>
       <dl>
-        <dt>Last name</dt>
-        <dd><?php echo h($member->last_name); ?></dd>
+        <dt>Habitat</dt>
+        <dd><?php echo h($bird->habitat); ?></dd>
       </dl>
       <dl>
-        <dt>Email</dt>
-        <dd><?php echo h($member->email); ?></dd>
+        <dt>Food</dt>
+        <dd><?php echo h($bird->food); ?></dd>
       </dl>
       <dl>
-        <dt>Username</dt>
-        <dd><?php echo h($member->username); ?></dd>
+        <dt>Conservation ID</dt>
+        <dd><?php echo h($bird->conservation()); ?></dd>
+      </dl>
+      <dl>
+        <dt>Backyard Tips</dt>
+        <dd><?php echo h($bird->backyard_tips); ?></dd>
       </dl>
     </div>
 
   </div>
 
 </div>
-
-<?php include(SHARED_PATH . '/member_footer.php'); ?>

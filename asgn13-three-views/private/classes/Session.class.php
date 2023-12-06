@@ -19,6 +19,7 @@ class Session extends Member {
       session_regenerate_id();
       $this->member_id = $_SESSION['member_id'] = $member->id;
       $this->username = $_SESSION['username'] = $member->username;
+      $this->user_level = $_SESSION['user_level'] = $member->user_level;
       $this->last_login = $_SESSION['last_login'] = time();
     }
     return true;

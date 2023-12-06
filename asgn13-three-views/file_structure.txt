@@ -1,0 +1,46 @@
+asgn13-three-views/
+|-- private/
+|   |-- admin/
+|   |   |-- users/
+|   |   |   |-- delete.php
+|   |   |   |-- edit.php
+|   |   |   |-- form_fields.php
+|   |   |   |-- index.php
+|   |   |   |-- new.php
+|   |   |   |-- show.php
+|   |   |-- index.php
+|   |-- classes/
+|   |   |-- Bird.class.php
+|   |   |-- DatabaseObject.class.php
+|   |   |-- Member.class.php
+|   |   |-- Session.class.php
+|   |-- shared/
+|   |   |-- admin_footer.php
+|   |   |-- admin_header.php
+|   |   |-- member_footer.php
+|   |   |-- member_header.php
+|   |   |-- public_copyright_dislaimer.php
+|   |   |-- public_footer.php
+|   |   |-- public_header.php
+|   |-- database_functions.php
+|   |-- db_credentials.php
+|   |-- functions.php
+|   |-- initialize.php
+|   |-- status_error_functions.php
+|   |-- validation_functions.php
+|-- public/
+|   |-- members/
+|   |   |-- delete.php
+|   |   |-- edit.php
+|   |   |-- form_fields.php
+|   |   |-- members.php
+|   |   |-- new.php
+|   |   |-- show.php
+|   |-- about.php
+|   |-- birds.php
+|   |-- detail.php
+|   |-- form_fields.php
+|   |-- index.php
+|   |-- login.php
+|   |-- logout.php
+|   |-- signup.php

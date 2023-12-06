@@ -1,11 +1,13 @@
-<?php require_once('../private/initialize.php'); ?>
+<?php
 
-<?php include(SHARED_PATH . '/public_header.php'); ?>
+require_once('../private/initialize.php');
+include(SHARED_PATH . '/public_header.php');
 
+?>
 
   <ul>
-    <li><a href="<?php echo url_for('/members/new.php'); ?>">Sign Up</a></li>
-    <li><a href="<?php echo url_for('/members/index.php'); ?>">Login</a></li>
+    <li><a href="<?php echo url_for('signup.php'); ?>">Sign Up</a></li>
+    <li><a href="<?php echo url_for('login.php'); ?>">Login</a></li>
     <li><a href="<?php echo url_for('/birds.php'); ?>">View Our Inventory</a></li>
     <li><a href="<?php echo url_for('/about.php'); ?>">About Us</a></li>
   </ul>

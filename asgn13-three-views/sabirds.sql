@@ -41,6 +41,30 @@ INSERT INTO `birds` (`id`, `common_name`, `habitat`, `food`, `conservation_id`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bird_images`
+--
+
+CREATE TABLE `bird_images` (
+  `id` int(11) NOT NULL,
+  `bird_id_fk` int(11) NOT NULL,
+  `image_name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `bird_images`
+--
+
+INSERT INTO `bird_images` (`id`, `bird_id_fk`, `image_name`) VALUES
+(2, 1, 'carolina-wren-01.jpg'),
+(3, 2, 'tufted-titmouse-01.jpg'),
+(4, 3, 'ruby-throated-hummingbird-01.jpg'),
+(5, 4, 'eastern-towhee-01.jpg'),
+(6, 5, 'indigo-bunting-01.jpg');
+
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -50,7 +74,7 @@ CREATE TABLE `users` (
   `last_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `user_level` char(1) NOT NULL,
+  `user_level` char(1) NOT NULL DEFAULT 'M',
   `hashed_password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -59,8 +83,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `username`, `user_level`, `hashed_password`) VALUES
-(2, 'Billy', 'Baloney', 'billy@playhouse.com', 'billybaloney', '', '$2y$10$LEFWp0b1Su8DlNHyuXHJ6.pf1XZBUYTRZtDVfHsexOAsV9qPb370O'),
-(3, 'Cowboy', 'Curtis', 'cowboy@playhouse.com', 'cowboycurtis', '', '$2y$10$RF7bjUyuF.0xbFCE2ZERmuTtxiPcBnSvtf4/U.jekSER9nbu1QHFq');
+(2, 'Billy', 'Baloney', 'billy@playhouse.com', 'billybaloney', 'A', '$2y$10$LEFWp0b1Su8DlNHyuXHJ6.pf1XZBUYTRZtDVfHsexOAsV9qPb370O'),
+(3, 'Cowboy', 'Curtis', 'cowboy@playhouse.com', 'cowboycurtis', 'A', '$2y$10$RF7bjUyuF.0xbFCE2ZERmuTtxiPcBnSvtf4/U.jekSER9nbu1QHFq'),
+(4, 'Rich', 'Rodriguez', 'Rich@abtech.edu', 'RichRodriguez', 'A', '$2y$10$FmXNHs6KBklEOUrOZR/nge992GJ4AnErWW.VvHgb9UNPwZc3UpCzO');
 
 --
 -- Indexes for dumped tables
@@ -111,3 +136,9 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `bird_images`
+--
+ALTER TABLE `bird_images`
+  ADD CONSTRAINT `bird_images_ibfk_1` FOREIGN KEY (`bird_id_fk`) REFERENCES `birds` (`id`);

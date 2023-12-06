@@ -23,6 +23,7 @@ class Member extends DatabaseObject {
     $this->username = $args['username'] ?? '';
     $this->password = $args['password'] ?? '';
     $this->confirm_password = $args['confirm_password'] ?? '';
+    $this->user_level = isset($args['user_level']) ? $args['user_level'] : 'M';
   }
 
   public function full_name() {
@@ -112,7 +113,7 @@ class Member extends DatabaseObject {
   static public function find_by_username($username, $id = null) {
     $sql = "SELECT * FROM " . static::$table_name . " ";
     $sql .= "WHERE username='" . self::$database->escape_string($username) . "' ";
-    
+
     // Exclude null IDs only if not a new user
     if (!is_null($id)) {
         $sql .= "AND id IS NOT NULL";

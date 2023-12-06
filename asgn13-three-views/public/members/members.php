@@ -1,11 +1,21 @@
-<?php 
-  require_once('../private/initialize.php');
-  $page_title = 'Bird List';
-  include(SHARED_PATH . '/public_header.php');
+<?php
+
+require_once('../../private/initialize.php');
+require_login();
+
+// Find all members
+$page_title = 'Members Area';
+
+include(SHARED_PATH . '/member_header.php');
+
 ?>
 
 <h2>Bird inventory</h2>
 <p>This is a short list -- start your birding!</p>
+
+<a href="<?php // Create a link to Add a Bird
+echo url_for('/members/new.php');
+?>">Add Bird</a>
 
     <table border="1">
       <tr>
@@ -14,6 +24,8 @@
         <th>Food</th>
         <th>Conservation</th>
         <th>Backyard Tips</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
         <th>&nbsp;</th>
       </tr>
 
@@ -31,11 +43,13 @@
         <td><?php echo h($bird->food); ?></td>
         <td><?php echo h($bird->conservation()); ?></td>
         <td><?php echo h($bird->backyard_tips); ?></td>
-        <td><a href="detail.php?id=<?php echo $bird->id; ?>">View</a></td>
+        <td><a href="show.php?id=<?php echo $bird->id; ?>">View</a></td>
+        <td><a href="edit.php?id=<?php echo $bird->id; ?>">Edit</a></td>
+        <td><a href="delete.php?id=<?php echo $bird->id; ?>">Delete</a></td>
       </tr>
       <?php } ?>
 
     </table>
 
 
-<?php include(SHARED_PATH . '/public_footer.php'); ?>
+<?php include(SHARED_PATH . '/member_footer.php'); ?>

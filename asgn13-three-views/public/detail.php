@@ -22,10 +22,8 @@
 
   <a href="birds.php">Back to Inventory</a>
 
-      <dl>
-        <dt>ID</dt>
-        <dd><?php echo h($bird->id); ?></dd>
-      </dl>
+  <h1>Bird: <?php echo h($bird->common_name); ?></h1>
+
       <dl>
         <dt>Name</dt>
         <dd><?php echo h($bird->common_name); ?></dd>
