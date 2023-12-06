@@ -17,7 +17,7 @@ FLUSH PRIVILEGES;
 -- Table structure for table `birds`
 --
 
-
+DROP TABLE IF EXISTS `birds`;
 CREATE TABLE `birds` (
   `id` int(11) NOT NULL,
   `common_name` varchar(100) NOT NULL,
@@ -44,6 +44,7 @@ INSERT INTO `birds` (`id`, `common_name`, `habitat`, `food`, `conservation_id`, 
 -- Table structure for table `bird_images`
 --
 
+DROP TABLE IF EXISTS `bird_images`;
 CREATE TABLE `bird_images` (
   `id` int(11) NOT NULL,
   `bird_id_fk` int(11) NOT NULL,
@@ -68,6 +69,7 @@ INSERT INTO `bird_images` (`id`, `bird_id_fk`, `image_name`) VALUES
 -- Table structure for table `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `first_name` varchar(255) NOT NULL,
