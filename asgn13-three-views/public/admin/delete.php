@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../../private/initialize.php');
+require_once('../../private/initialize.php');
 require_login();
 
 if (!isset($_SESSION['member_id']) || $_SESSION['user_level'] !== 'A') {
@@ -27,10 +27,10 @@ if(is_post_request()) {
   // Display form
 }
 
-?>
+$page_title = 'Delete User';
+include(SHARED_PATH . '/admin_header.php');
 
-<?php $page_title = 'Delete User'; ?>
-<?php include(SHARED_PATH . '/admin_header.php'); ?>
+?>
 
 <div id="content">
 
@@ -39,7 +39,7 @@ if(is_post_request()) {
   <div class="member delete">
     <h1>Delete Member</h1>
     <p>Are you sure you want to delete this member?</p>
-    <p class="item"><?php echo h($member->full_name()); ?></p>
+    <p class="item"><?= h($member->full_name()); ?></p>
 
     <form action="delete.php?id=<?= h(u($id)); ?>" method="post">
       <div id="operations">

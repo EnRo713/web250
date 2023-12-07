@@ -30,7 +30,7 @@ if(is_post_request()) {
       if (isset($member->user_level)) {
           if ($member->user_level === 'M') {
               // Redirect for members
-              redirect_to(url_for('/members/members.php'));
+              redirect_to(url_for('/birds/birds.php'));
           } elseif ($member->user_level === 'A') {
               // Redirect for admins
               redirect_to(url_for('/admin/index.php'));

@@ -8,7 +8,10 @@ include(SHARED_PATH . '/public_header.php');
   <ul>
     <li><a href="<?php echo url_for('signup.php'); ?>">Sign Up</a></li>
     <li><a href="<?php echo url_for('login.php'); ?>">Login</a></li>
-    <li><a href="<?php echo url_for('/birds.php'); ?>">View Our Inventory</a></li>
+    <?php if ($session->is_logged_in()) : ?>
+      <li><a href="<?php echo url_for('logout.php'); ?>">Logout</a></li>
+    <?php endif; ?>
+    <li><a href="<?php echo url_for('birds/birds.php'); ?>">View Our Inventory</a></li>
     <li><a href="<?php echo url_for('/about.php'); ?>">About Us</a></li>
   </ul>
     

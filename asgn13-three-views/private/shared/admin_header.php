@@ -11,18 +11,21 @@
 
     <header>
       <h1>
-        <a href="<?php echo url_for('../public/index.php'); ?>">WNC Birds</a> Admin Area
+        <a href="<?= url_for('../public/index.php'); ?>">WNC Birds</a> Admin Area
       </h1>
     </header>
 
     <navigation>
       <ul>
         <?php if($session->is_logged_in()) { ?>
-        <li>User: <?php echo $session->username; ?></li>
-        <li><a href="<?php echo url_for('/admin/index.php'); ?>">Menu</a></li>
-        <li><a href="<?php echo url_for('/logout.php'); ?>">Logout</a></li>
+        <li>User: <?= $session->username; ?></li>
+        <ul>
+          <li><a href="<?= url_for('admin/index.php'); ?>">Users</a></li>
+          <li><a href="<?= url_for('birds/birds.php'); ?>">Birds</a></li>
+        </ul>
+        <li><a href="<?= url_for('/logout.php'); ?>">Logout</a></li>
         <?php } ?>
       </ul>
     </navigation>
 
-<?php echo display_session_message(); ?>
+<?= display_session_message(); ?>

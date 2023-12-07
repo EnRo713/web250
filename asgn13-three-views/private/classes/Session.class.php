@@ -44,6 +44,7 @@ class Session extends Member {
     if(isset($_SESSION['member_id'])) {
       $this->member_id = $_SESSION['member_id'];
       $this->username = $_SESSION['username'];
+      $this->user_level = $_SESSION['user_level'];
       $this->last_login = $_SESSION['last_login'];
     }
   }

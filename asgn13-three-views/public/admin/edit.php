@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../../private/initialize.php');
+require_once('../../private/initialize.php');
 require_login();
 
 if (!isset($_SESSION['member_id']) || $_SESSION['user_level'] !== 'A') {
@@ -26,20 +26,13 @@ if(is_post_request()) {
   if($result === true) {
     $session->message('The user was updated successfully.');
     redirect_to('show.php?id=' . $id);
-  } else {
-    // show errors
   }
-
-} else {
-
-  // display the form
-
 }
 
-?>
+$page_title = 'Edit User';
+include(SHARED_PATH . '/admin_header.php');
 
-<?php $page_title = 'Edit User'; ?>
-<?php include(SHARED_PATH . '/admin_header.php'); ?>
+?>
 
 <div id="content">
 

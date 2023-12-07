@@ -14,7 +14,7 @@ if(is_post_request()) {
   if($result === true) {
     $new_id = $member->id;
     $session->message('Thank you for signing up!');
-    redirect_to(url_for('/members/members.php'));
+    redirect_to(url_for('/birds/birds.php'));
   } else {
     // show errors
   }
@@ -29,14 +29,14 @@ if(is_post_request()) {
 
 <div id="content">
 
-  <a class="back-link" href="<?php echo url_for('index.php'); ?>">&laquo; Back to Home</a>
+  <a class="back-link" href="<?= url_for('index.php'); ?>">&laquo; Back to Home</a>
 
   <div class="member new">
     <h1>Sign Up</h1>
 
-    <?php echo display_errors($member->errors); ?>
+    <?= display_errors($member->errors); ?>
 
-    <form action="<?php echo url_for('signup.php'); ?>" method="post" id="demo-form">
+    <form action="<?= url_for('signup.php'); ?>" method="post" id="demo-form">
 
       <?php include('form_fields.php'); ?>
 

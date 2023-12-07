@@ -8,22 +8,22 @@ if(!isset($member)) {
 
 <dl>
   <dt>First name</dt>
-  <dd><input type="text" name="member[first_name]" value="<?php echo h($member->first_name); ?>" /></dd>
+  <dd><input type="text" name="member[first_name]" value="<?= h($member->first_name); ?>" /></dd>
 </dl>
 
 <dl>
   <dt>Last name</dt>
-  <dd><input type="text" name="member[last_name]" value="<?php echo h($member->last_name); ?>" /></dd>
+  <dd><input type="text" name="member[last_name]" value="<?= h($member->last_name); ?>" /></dd>
 </dl>
 
 <dl>
   <dt>Email</dt>
-  <dd><input type="text" name="member[email]" value="<?php echo h($member->email); ?>" /></dd>
+  <dd><input type="text" name="member[email]" value="<?= h($member->email); ?>" /></dd>
 </dl>
 
 <dl>
   <dt>Username</dt>
-  <dd><input type="text" name="member[username]" value="<?php echo h($member->username); ?>" /></dd>
+  <dd><input type="text" name="member[username]" value="<?= h($member->username); ?>" /></dd>
 </dl>
 
 <dl>

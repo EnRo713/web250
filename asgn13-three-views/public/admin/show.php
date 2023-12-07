@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../../private/initialize.php');
+require_once('../../private/initialize.php');
 require_login();
 
 if (!isset($_SESSION['member_id']) || $_SESSION['user_level'] !== 'A') {
@@ -12,7 +12,7 @@ $id = $_GET['id'] ?? '2'; // PHP > 7.0
 $member = Member::find_by_id($id);
 
 $page_title = 'Show Member: ' . h($member->full_name());
-include(SHARED_PATH . '/member_header.php');
+include(SHARED_PATH . '/admin_header.php');
 
 ?>
 
@@ -51,4 +51,4 @@ include(SHARED_PATH . '/member_header.php');
 
 </div>
 
-<?php include(SHARED_PATH . '/member_footer.php'); ?>
+<?php include(SHARED_PATH . '/admin_footer.php'); ?>

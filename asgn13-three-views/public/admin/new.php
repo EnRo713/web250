@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../../private/initialize.php');
+require_once('../../private/initialize.php');
 require_login();
 
 if (!isset($_SESSION['member_id']) || $_SESSION['user_level'] !== 'A') {
